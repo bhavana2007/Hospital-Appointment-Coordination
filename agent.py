@@ -124,7 +124,7 @@ class GeminiAgent:
             raise ValueError("GEMINI_API_KEY environment variable is not set.")
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel(
-            model_name="gemini-2.0-flash",
+            model_name="gemini-flash-latest",
             tools=[gemini_tool],
             system_instruction=SYSTEM_PROMPT,
         )

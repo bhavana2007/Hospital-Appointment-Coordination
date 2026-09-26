@@ -1,11 +1,14 @@
 import os
 import secrets
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from database import init_db, get_db, check_password
 from agent import GeminiAgent
+
+load_dotenv()
 
 app = FastAPI(title="Hospital Appointment Booking Agent")
 init_db()
